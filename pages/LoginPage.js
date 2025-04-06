@@ -12,6 +12,7 @@ import {
     Platform,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import * as SecureStore from 'expo-secure-store';
 import { API } from "../utils/API.js"; 
 import axios from "axios";
 
@@ -62,7 +63,7 @@ export const LogIn = ({ navigation }) => {
             );
 
             if (response.status === 200) {
-                Alert.alert("Success", "Login successful!"); 
+                // SecureStore.setItemAsync()
                 navigation.navigate("Home");
             } 
         } catch (error) {

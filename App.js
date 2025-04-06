@@ -8,20 +8,9 @@ import { LogIn } from './pages/LoginPage.js';
 import { Provider } from 'react-redux';
 import { store } from './redux/store.js'
 import Register from './pages/Registration.js';
+import Home from './pages/Home.js';
 
 
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <StatusBar style='black' backgroundColor='#000000' />
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
-    </View>
-  );
-}
 
 function DetailsScreen({ navigation }) {
   return (
@@ -42,7 +31,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Splash">
           <Stack.Screen options={{ headerShown: false }} name="Splash" component={MatrixSplash} />
-          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen options={{ headerBackVisible: false }} name="Home" component={Home} />
           <Stack.Screen name="Details" component={DetailsScreen} />
           <Stack.Screen name="Registration" component={Register} />
           <Stack.Screen name="Login" component={LogIn} />
